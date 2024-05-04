@@ -2,10 +2,10 @@ import MyComponent from './MyComponent.jsx';
 
 function App() {
   
-  return (
+  return(
     <>
       <MyComponent/>
     </>
-  )
+  );
 }
 export default App

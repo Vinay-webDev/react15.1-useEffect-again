@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 /* useEffect() = React hook that tells React 
                  TO DO SOME CODE when: (pick one) 
                  the component re-renders
@@ -16,17 +16,17 @@ useEffect(() => {}, [value])  ===>>> runs on mount + when
  
 function MyComponent() {
 
-    const [count, setCount] = useEffect(0);
+    const [count, setCount] = useState(0);
 
     function addCount() {
         setCount(c => c + 1);
     }
 
   return(
-        <div>
+        <>
             <p> Count: {count} </p>
             <button onClick={addCount} > add </button>
-        </div>
+        </>
   );
 }
 export default MyComponent;

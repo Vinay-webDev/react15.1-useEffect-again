@@ -20,7 +20,7 @@ function MyComponent() {
     
     useEffect(() => {
         document.title = `Count: ${count}`;
-    })
+    }, []);
 
     function addCount() {
         setCount(c => c + 1);
@@ -34,8 +34,6 @@ function MyComponent() {
   );
 }
 export default MyComponent;
-
-
 
 
 

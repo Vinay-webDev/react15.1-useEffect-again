@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+
 /* useEffect() = React hook that tells React 
                  TO DO SOME CODE when: (pick one) 
                  the component re-renders
@@ -11,12 +11,16 @@ useEffect(() => {}, [])  ===>>> runs only when the
                                 component mounts
 useEffect(() => {}, [value])  ===>>> runs on mount + when 
                                      value changes */
-
+import React, {useState, useEffect} from 'react';
 
  
 function MyComponent() {
 
     const [count, setCount] = useState(0);
+    
+    useEffect(() => {
+        document.title = `Count: ${count}`;
+    })
 
     function addCount() {
         setCount(c => c + 1);

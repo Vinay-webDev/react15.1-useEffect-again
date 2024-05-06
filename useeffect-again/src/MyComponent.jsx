@@ -29,15 +29,19 @@ function MyComponent() {
     function substractCount() {
         setCount(c => c - 1);
     }
+    
     function changeColor() {
-        setColor( c => c === "green"? "red" : "green" );
+        setColor( c => {if(count > 0) {
+            c === "green"
+        } else {
+             c === "red"
+        }});
     }
   return(
         <>
             <p style={{color: color}} > Count: {count} </p>
-            <button onClick={addCount} > add </button>
-            <button onClick={substractCount} > substract </button> <br />
-            <button onClick={changeColor} > change color </button>
+            <button  onClick={addCount}  > add </button>
+            <button onClick={substractCount} > substract </button>
         </>
   );
 }
